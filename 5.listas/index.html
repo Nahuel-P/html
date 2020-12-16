@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listas</title>
+  </head>
+  <body>
+    <h1>Lista desordenada</h1>
+
+    <h2>Lista de compras.</h2>
+    <ul>
+      <!-- Esto representa una lista no ordenada (Unordered list), el orden de los elementos no influye-->
+      <li>Dulce de leche</li>
+      <!--Esto es un elemento de la lista (list item). Cada elemento de la lista se representa con esta etiqueta. Y sirve tanto como para ul (Unordered list) y para la etiqueta ol (Ordered list)-->
+      <li>Tapitas de maicena</li>
+      <li>Coco</li>
+      <li>Chocolatada</li>
+    </ul>
+    <h2>Orden de aprendizaje web</h2>
+    <ol>
+      <!--Esto reprenta una lista ordenada (Ordered list). Se utiliza cuando el orden de los elementos es importante (también se podría usar para un top 10 por ejemplo.)-->
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ol>
+    <h2>Lenguajes para desarrollo web</h2>
+    <dl>
+      <!--Definition list. Se utiliza para hacer una lista de definiciones (diccionario)-->
+      <dt>HTML</dt>
+      <!--Definition term. Es el termino que se va a definir-->
+      <dd>
+        Hypertext Markup Languaje: Es un lenguaje de marcado que se usa para
+        estructurar datos en una página web
+      </dd>
+      <!--Es la descripción del término-->
+      <dt>CSS</dt>
+      <dd>
+        Cascade Style Sheets: Es un lenguaje de diseño que se utiliza para dar
+        estilos al HTML
+      </dd>
+      <dt>JavaScript</dt>
+      <dd>
+        Es un lenguaje de programación para dar interactividad a un sitio web
+      </dd>
+    </dl>
+    <h2>Atributos de las listas</h2>
+    <ul type="circle"> <!-- type cambia el estilo de la lista, puede ser disc(es el que viene por defecto), square, circle-->
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ul>
+
+    <ol type ="a" start="2"><!--El atributo type, de la misma manera que en ul, cambia el estilo de la lista, en este caso puede ser 1 (por defecto, es de enumeración), A (Enumera los items de manera alfabetica mayúsculas), a(Enumera los items de manera alfabetica minusculas), I (Números romanos mayusculas), i (números romanos minuscula). 
+    Hay otro atributo que es el start, que indica en que número se quiere empezar la lista (Tiene que ser un valor númerico)-->
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+  </body>
+</html>
