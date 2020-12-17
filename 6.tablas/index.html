@@ -4,17 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabla</title>
+    <style> 
+    col:nth-child(1){
+    background-color: blueviolet;
+    }
+    col:nth-child(2){
+        background-color: pink;
+      }
+      col:nth-child(3){
+        background-color: rgb(171, 98, 240);
+      }
+      
+    </style>
+    <!-- Aclaración: No se tiene que tienen que poner estilos en el mismo archivo html, sino que hay que crear un archivo aparte .css para realizar cambios de estilos, solamente hice esto para probar la selección de columnas-->
   </head>
   <body>
     <h1>Tablas</h1>
     <table>
-      <caption>
+      <caption><!-- Esta es una etiqueta de titulo de la tabla, es opcional ya que no todas las tablas requieren un nombre si o si. Se coloca después de la etiqueta <table>-->
         Horario de clases
       </caption>
-      <!-- Esta es una etiqueta de titulo de la tabla, es opcional ya que no todas las tablas requieren un nombre si o si. Se coloca después de la etiqueta <table>-->
-      <thead>
-        <!-- La etiqueta thead establece la cabecera de la tabla. Dentro de esta etiqueta, vamos a tener una etiqueta de <tr> para construir una fila, y dentro de la etiqueta <tr> en vez de <td>, hay que poner <th> (table head) -->
-        <tbody><!--Al tener un thead, significa que hay grupos dentro de la tabla, por lo tanto, la semantica correcta es tener un tbody. Esta etiqueta es opcional siempre y cuando no se utilice un thead-->
+      <colgroup> <!-- Esta etiqueta permite seleccionar una columna especifica. Dentro de esta etiqueta hay que poner la etiqueta col tantas veces dependiendo de la cantidad de columnas que hay.Cada etiqueta col equivale a una columna siguiento el mismo orden que tienen en la tabla-->
+          <col>
+          <col span = "4">
+          <col>
+          <col> <!--Este col no tendría lugar ya que el span="4" del 2do col estaría ocupan 4 celdas y hace que esta etiqueta se "vaya" del rango de la cantidad de columnas que tiene la tabla-->
+      </colgroup>
+           
+      <thead><!-- La etiqueta thead establece la cabecera de la tabla. Dentro de esta etiqueta, vamos a tener una etiqueta de <tr> para construir una fila, y dentro de la etiqueta <tr> en vez de <td>, hay que poner <th> (table head) -->
         <tr>
           <th></th>
           <th>L</th>
@@ -24,6 +41,7 @@
           <th>V</th>
         </tr>
       </thead>
+      <tbody><!--Al tener un thead, significa que hay grupos dentro de la tabla, por lo tanto, la semantica correcta es tener un tbody. Esta etiqueta es opcional siempre y cuando no se utilice un thead-->
       <tr>
         <!--Table row, esta etiqueta construye una fila-->
         <td>8:30 - 9:30</td>
@@ -52,7 +70,7 @@
       </tr>
       <tr>
         <td>11:20 - 11:45</td>
-        <td>Recreo</td>
+        <td colspan="5">Recreo</td> <!--El atributo colspan sirve para que una celda ocupe más de una columna, el valor por defecto es 1-->
       </tr>
       <tr>
         <td>11:45 - 12:40</td>
@@ -64,7 +82,7 @@
       </tr>
       <tr>
         <td>12:40 - 13:35</td>
-        <td>Música</td>
+        <td rowspan="2">Tecnología</td> <!--El atributo rowspan sirve para que una celda ocupe más de una fila, el valor por defecto es 1-->
         <td>Educación Física</td>
         <td>Plástica</td>
         <td>Religión</td>
@@ -72,7 +90,7 @@
       </tr>
       <tr>
         <td>13:35 - 14:30</td>
-        <td>Tecnología</td>
+        <!--<td>Tecnología</td> comento esta celda ya que está de más al usar un rowspan 2 en la fila anterior-->
         <td>Francés</td>
         <td>Tecnología</td>
         <td>Francés</td>
@@ -81,7 +99,7 @@
     </tbody>
     <tfoot> <!-- Esta etiqueta es completamente opcional-->
         <tr>
-            <td>Total de materias:</td>
+            <td colspan="5">Total de materias:</td>
             <td>12</td>
         </tr>
     </tfoot>
