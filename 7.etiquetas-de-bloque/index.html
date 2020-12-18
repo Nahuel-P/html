@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiquetas de bloque</title>
+</head>
+<body>
+    <h1>Etiquetas de bloque</h1>
+    <address> <!--Esta etiqueta sirve para aportar información de contacto para el article más cercano o para todo el body-->
+        Marge Simpsons <br> <!-- br hace un salto de linea. En esta ocasión está utilizado de manera correcta ya que se muestra una dirección-->
+        Calle Falsa 123 <br>
+        80085 <br>
+        Oregón <br>
+    </address>
+    <blockquote cite= "https://books.google.com.ar/books?id=Ki7bpf93tJgC&printsec=frontcover&hl=es&source=gbs_ge_summary_r&cad=0#v=onepage&q=matar%20a%20un%20drag%C3%B3n&f=false"> <!--Esta etiqueta se usa para marcar las citas a otros autores o documentos. El atributo cite sirve para poner un enlace al documento original o fuente.-->
+        <p>
+            "Por ejemplo, que los chinos decían que nadie podía matar a un dragón, porque para matarlo había que verlo, y los dragones sólo eran visibles para aquel que los amara."
+        </p>
+    </blockquote>
+
+    <pre><!-- Esta etiqueta se usa para tener código preformateado que necesita ser representado igual que se lo escribió-->
+        Hola,
+        Buenas tardes.
+    </pre>
+
+    <div><!--Se usa como división del documento, no significa nada realmente. Es un contenedor generico que se usa generalmente para dar estilos a través de css o para usar algo denominado "delegación de eventos" en javascript. Es importante que el contenido que esté dentro de un div, tiene que estar relacionado. -->
+        <h2>Nombre</h2>
+        <p>email</p>
+        <p>Descripción</p>
+    </div>
+    <div>
+        <h2>Nombre</h2>
+        <p>email</p>
+        <p>Descripción</p><!--Esto no está relacionado con los datos del div anterior, por lo tanto se tuvo que crear un contenedor nuevo.-->
+    </div>
+
+    <hr> <!--Horizontal rule, se usa para decirle al navegador que vamos a cambiar de tema. NO se usa para hacer lineas y darle estilos al HR-->
+</body>
+</html>
