@@ -180,5 +180,23 @@
     <meter id="fuel" min="0" max="100" value="60" low="30" high = "75" optimum="50"></meter> <!--Representa el valor dentro de un rango conocido-->
     <label for="task"> Tarea 1 </label>
     <progress id="task" max="100" value="75"></progress>
+    <div>
+    <label for="message">Mensaje</label>
+    <textarea name= "" id="message" cols="30" rows="10"></textarea><!--cols indica el número de columnas, y rows, el número de filas. Se puede bloquear el tamaño desde css-->
+    </div>
+
+    <h2>Atributos de los formularios</h2>
+      <form>
+        <input type="text" placeholder="Ingrese su nombre" required> <!--placeholder da una pista de lo que el usuario tiene que introducir, required hace que un campo sea obligatorio-->
+        <input type="text" value="Hola" readonly> <!-- Readonly hace que el campo sea solo lectura-->
+        <input type="text" value="Hola" disabled> <!--Desactiva el campo, no se puede escribir en él, no es lo mismo que readonly, en readonly se envia la información que está en el campo, en el caso de disabled, no se envia la información, -->
+        <select name="numbers">
+            <option value="one">One</option>
+            <option value="two" selected>Two</option><!--selected equivale a checked en los select, sirve para establecer una opción por defecto. No funciona correctamente en firefox-->
+        </select>
+        <input type="number" min="5" max="10"> <!--Min y max establece el minimo y el máximo de un campo númerico. Se puede poner solo min, o solo max-->
+        <input type="text" minlength="3" maxlength="6" required autofocus> <!--minlength y maxlength establece el minimo y máximo de caracteres en un campo de texto, autofocus pone el foco por defecto al cargar el formulario (simula que el usuario hizo click en el campo)-->
+        <input type="submit">
+      </form>
   </body>
 </html>
