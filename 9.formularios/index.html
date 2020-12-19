@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+  </head>
+  <body>
+    <h1>Formularios</h1>
+    <h2>Estructura básica de formularios</h2>
+    <!--atributo button: Se comporta igual que un botón <button>
+    submit: Se utiliza para enviar el formulario-->
+    <form><!--Esta etiqueta engloba al formulario-->
+      <label for="name">Nombre<!--Sirve para escribir el nombre del campo a rellenar. Debe tener el atributo 'for' al cual se le indica un id que lo que hace es emparejar el label con su input correspondiente--></label>
+      <input id="name"/><!--Sirve para crear un campo que permitiría al usuario interactuar-->
+      <button>Enviar<!--Crea un botón que permitirá enviar el formulario--></button>
+      <input type="button" value="Enviar Formulario"/><!-- Esto es un botón, a diferencia de la etiqueta button, no envia el formulario, solo sirve para poner un botón en el formulario y que haga alguna operación desde javascript. Para enviarlo se utiliza el type submit-->
+      <input type="submit" value="Subir Formulario"/>
+    </form>
+
+    <h2>Input para tipo fecha</h2>
+    <!--
+    date: Se utiliza para introducir una fecha
+    datetime: Obsoleto
+    datetime-local: fecha y hora, no funciona en firefox
+    time: Se utiliza para introducir una hora
+    month: Se utiliza para introducir un mes, no funciona en firefox
+    week: Se utiliza para introducir el número de semana de año, no funciona en firefox\
+    TIP: Se recomienda usar date y time para seleccionar fecha y hora -->
+    <form>
+      <input type="date" />
+      <input type="time" />
+    </form>
+
+    <h2>Input para mobile</h2>
+    <!--Tipos de input
+    search: Se utiliza para las barras de búsqueda
+    tel: Se utiliza para introducir números telefónicos
+    email: se utiliza para introducir un email
+    password: Se utiliza para contraseñas
+    url: Se utiliza para introducir URLs
+    Se discrimina esta parte de los formularios para mobile ya que desde el celular aparecen diferentes tipos de teclados dependiendo del tipo del formulario-->
+    <form>
+      <div>
+        <label>
+          Search
+          <input type="search" />
+        </label>
+      </div>
+      <div>
+        <label>
+          Teléfono
+          <input type="tel" />
+        </label>
+      </div>
+      <div>
+        <label>
+          email
+          <input type="email" />
+        </label>
+      </div>
+      <div>
+        <label>
+          password
+          <input type="password" />
+        </label>
+      </div>
+      <div>
+        <label>
+          url
+          <input type="url" />
+        </label>
+      </div>
+    </form>
+    <h2>Otros inputs</h2>
+    <form>
+      <input type="color" />
+      <input type="number" />
+      <input type="range" step="5" min="0" max="20" /><!--el atributo step indica cada cuanto se mueve la barra, min establece el minimo de la barra, y max, el máximo-->
+      <input type="reset" /><!-- Esto solamente funciona en el formulario en el cual el botón reset esté situado. Es decir, va a resetear los input de color, number y range, los anteriores de mobile, fechas y etc, no los va a modificar. Generalmente se pone al lado del botón de enviar formulario-->
+      <input type="text" /><!-- Este atributo es el que viene por defecto, se suele utilizar para cambiar de hidden a text dependiendo del input del usuario-->
+    </form>
+    <!--hidden: Campo oculto, puede contener valor que no se mostrará
+    color: Se utiliza para especificar un color
+    number: Se utiliza para valores numéricos
+    range: Se utiliza para establecer un rango
+    reset: Se utiliza para resetear el formulario
+    text: Valor por defecto-->
+
+    <h2>Input radio</h2>
+    <form>
+      <h3>Género</h3>
+      <label>
+        Masculino
+        <input type="radio" name="gender" value="masculino" /><!--Poniendo el atributo name con el mismo nombre en los 3 input, se está indicando que los 3 pertenecen a la misma categoría, solo se puede seleccionar 1 de los 3-->
+      </label>
+      <label>
+        Femenino
+        <input type="radio" name="gender" value="femenino" />
+      </label>
+      <label>
+        Otro
+        <input type="radio" name="gender" value="otro" checked />
+      </label>
+    </form>
+
+    <h2>Input checkbox</h2>
+    <form>
+      <h3>Lenguajes que conocés</h3>
+      <label>
+        HTML
+        <input type="checkbox" name="languages" value="html" checked /><!-- El atributo checked marca por defecto la casilla sin necesidad de que el usuario haga click (no funciona en firefox), el name corresponde a la categoría, y value es el valor-->
+      </label>
+      <label>
+        CSS
+        <input type="checkbox" name="languages" value="css" />
+      </label>
+      <label>
+        Javascript
+        <input type="checkbox" name="languages" value="javascript" />
+      </label>
+    </form>
+    <h2>Input select</h2>
+    <form>
+      <p>Seleccione más de una opción apretando la tecla CTRL</p>
+      <select name="lenguajes" multiple><!--El atributo multiple sirve para elegir más de una opción, en vez de ser un desplegable, es como una lista que nos permite seleccionar varios con la tecla CTRL-->
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">Javascript</option>
+      </select>
+    </form>
+    <h2>Input select con categorías</h2>
+    <form>
+      <select name="Mascotas">
+        <optgroup label="4 patas"><!--Si hay muchas opciones para evaluar en un formulario, está la etiqueta optgroup que sirve para categorizar las opciones. El atributo label se utiliza para nombrar esa categoría-->
+          <option value="perro">Perro</option>
+          <option value="gato">Gato</option>
+          <option value="hamster">Hamster</option>
+          <option value="conejo">Conejo</option>
+        </optgroup>
+        <optgroup label="Aves">
+          <option value="loro">Loro</option>
+          <option value="canario">Canario</option>
+        </optgroup>
+        <optgroup label="Otras">
+          <option value="serpiente">Serpiente</option>
+          <option value="tarantula">Tarantula</option>
+        </optgroup>
+      </select>
+    </form>
+
+    <h2>Input con filtro</h2>
+    <form>
+      <input type="list" list="pets" />
+      <datalist id="pets"><!--El id de la etiqueta datalist, tiene que coincidir con el atributo "list" de la etiqueta input. Filtra por aquellos resultados que tengan esa palabra, por ejemplo: si ponemos "te", aparece serpienTE y hamsTEr -->
+        <option value="perro">Perro</option><!-- En otros navegadores se puede omitir poner Perro, pero en firefox no es recomendable-->
+        <option value="gato">Gato</option>
+        <option value="hamster">Hamster</option>
+        <option value="conejo">Conejo</option>
+        <option value="loro">Loro</option>
+        <option value="canario">Canario</option>
+        <option value="serpiente">Serpiente</option>
+        <option value="tarantula">Tarantula</option>
+      </datalist>
+    </form>
+    <form>
+      <h2>Más elementos para formularios</h2>
+      <fieldset><!--Esta etiqueta se utiliza para agrupar elementos dentro de un formulario-->
+        <legend>Datos Personales</legend> <!-- Representa una etiqueta para el contenido del fieldset-->
+        <div>
+          <label for="name"> Nombre</label>
+          <input type="text" id="name"/>
+        </div>
+        <label for="surname">Apellidos</label>
+        <input type="text" id="surname"/>
+      </fieldset>
+      <input type="file"> <!-- Esto sirve para cargar archivos y enviarlos desde un formulario.No tiene mucha utilidad sin javascript-->
+    </form>
+    <label for="fuel"> Combustible</label>
+    <meter id="fuel" min="0" max="100" value="60" low="30" high = "75" optimum="50"></meter> <!--Representa el valor dentro de un rango conocido-->
+    <label for="task"> Tarea 1 </label>
+    <progress id="task" max="100" value="75"></progress>
+  </body>
+</html>
