@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido embebido</title>
+    <style>
+        img{
+            max-width: 100%;
+        }
+        div img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contenido embebido</h1>
+        <h2>Imágenes</h2>
+            <p>Los formatos de imágenes para web se pueden clasificar en 2 tipos</p>
+            <ul>
+                <li>Vectoriales
+                    <ul><li>svg (recomendado siempre que se pueda, generalmente se usan para iconos y logos)</li></ul>
+                </li>
+                <li>Mapa de bits
+                    <ul>
+                    <li>jpg </li>
+                    <li>png 8 y 24 (si se necesita transparencias)</li>
+                    <li>gif (si se necesita una imagen animada)</li>
+                    <li>webp (es la que menos pesa, admite transparencias y animaciones. Es la más recomendable, aunque hay navegadores antiguos que no soportan este formato, en ese caso hay que hacer un fallback)</li>
+                    </ul>
+                </li>
+            </ul>
+        <img src="assets/images/fez.gif" alt="Gómez de Fez corriendo">
+        <img src="assets/images/fez.webp" alt="Gómez de Fez corriendo">
+        <img src="assets/images/fez.png" alt="Gómez de Fez estático con transparencia">
+        <img src="assets/images/fez.jpg" alt="Gómez de Fez estático sin transparencia">
+        <div>
+        <img src="assets/images/github.svg" alt="Github logo">
+        </div>
+        <img srcset="assets/images/stars.webp 1.5x,
+        assets/images/stars.jpg 1.5x, 
+        assets/images/stars-mobile.webp 2x,
+        assets/images/stars-mobile.png 2x" src="/assets/images/stars.jpg " alt="Imagen homero"> <!--srcset recibe un set de imagenes (source), donde puede cargar las imagenes a base de una condición, 2x especifica en que pixel ratio va a aparecer la imagen-->
+
+        <picture><!--picture es un contenedor usado para especificar múltiples elementos source. Cuando se usa la etiqueta picture hay que usar obligatoriamente el fallback/backup-->
+            <source srcset="/assets/images/stars-mobile.webp,
+            /assets/images/stars-mobile.png" media="(max-width:1200px)"> <!--Esta imagen va a variar dependiendo del ancho del navegador-->
+            <img src="/assets/images/stars.jpg" alt=""><!-- Es importante el img para que funcionen bien las imagenes-->
+        </picture>
+
+        <h2>Audio</h2>
+        <audio src="/assets/audio/molchat-doma.mp3" controls autoplay muted></audio> <!--El atributo controls muestra los controles del audio, en caso que no esté este atributo, no se va a mostrar nada. Controls es un atributo booleano. Autoplay hace que el audio comience automaticamente al cargar la página, se bloquea el autoplay si no está muteado, que eso se logra con el atributo muted-->
+
+        <h2>Video</h2>
+        <video src="/assets/video/de-tin-marin.mp4" controls autoplay muted loop></video> <!--Los atributos son los mismos que el audio. Lo que varía es el atributo loop, que una vez que termina el video, vuelve a empezar desde el principio-->
+        <video src="/assets/video/de-tin-marin.mp4" controls poster="assets/images/fez.png"></video> <!--El atributo poster sirve para indicar cual va a ser la imagen inicial (como una miniatura en youtube)-->
+
+        <h2>IFrames</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TA6wCQcPNWs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><!--Los atributos básicos del ifram  son width, height y src. La desventaja que tienen los iframes es el peso extra que se le agrega a la web-->
+
+        <h2>Figure</h2>
+        <h3>Michi</h3>
+            <section>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate labore quam rem provident alias nostrum corporis laudantium harum eum porro fugiat, laborum laboriosam odit quae dicta. Voluptates perferendis ipsa quas?</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, exercitationem. Harum eligendi consequuntur natus, quos consequatur explicabo repudiandae sint rem delectus incidunt praesentium nesciunt dolores optio, placeat asperiores quibusdam magnam!</p>
+            </section>
+                <figure><!--Figure se utiliza siempre que se quiera romper el flujo del contenido con un contenido relacionado pero que no es necesario para la interpretación del articulo. Es decir, si lo sacamos, seguiría funcionando-->
+                    <img src="/assets/images/michi.webp" alt="michi">
+                    <figcaption> Michi durmiendo</figcaption><!--Esto es opcional, sirve para ponerle texto a la imagen.-->
+                </figure>
+            <section>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, incidunt et? Necessitatibus facere, accusamus libero tenetur eaque numquam voluptas culpa quod laboriosam, rem laborum. Distinctio quaerat voluptate eaque soluta asperiores?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo minus reprehenderit error ipsam inventore expedita, blanditiis autem officia tempore ratione natus harum vitae, dicta ipsum dolore eligendi asperiores, perspiciatis deleniti?</p>
+            </section>
+            
+</body>
+</html>
